@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ 
+    <property name="LOGS" value="./logs" />
+ 
+    <appender name="Console"
+        class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{ISO8601} %-5level [%X{X-Flow-Id},%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] [v:${app.version}] [%t] %C{1.}: %replace(%msg){'[\r\n]|&lt;script', '_'} %n%rEx{5}
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- LOG everything at INFO level -->
+    <root level="info">
+        <!-- <appender-ref ref="RollingFile" />  -->
+        <appender-ref ref="Console" />
+    </root>
+ 
+    <!-- LOG "com.api..core.starter.exception*" at TRACE level -->
+    <logger name="com.api..core.starter.exception" level="info" additivity="false">
+        <!-- <appender-ref ref="RollingFile" /> -->
+        <appender-ref ref="Console" />
+    </logger>
+    
+    <logger name="org.zalando.logbook" level="trace" additivity="false">
+        <!-- <appender-ref ref="RollingFile" /> -->
+        <appender-ref ref="Console" />
+    </logger>
+    
+    <logger name="com.api..core.starter.exception.LoggingInterceptor" level="error" additivity="false">
+      <!-- <appender-ref ref="RollingFile" /> -->
+        <appender-ref ref="Console" />
+    </logger>
+    
+	<!-- Stop Watch Marker -->
+    <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+		<Marker>STOP_WATCH</Marker>
+		<OnMatch>DENY</OnMatch>
+		<OnMismatch>NEUTRAL</OnMismatch>
+	</turboFilter>
+ 
+</configuration>

@@ -1,0 +1,50 @@
+spring:
+   devtools:
+      restart:
+         enabled: false
+   mvc:
+      pathmatch:
+         matching-strategy: ant_path_matcher
+   config:
+      import: "optional:configserver:http://localhost:8888"
+   datasource:
+      password: diego
+      url: jdbc:postgresql://localhost:5432/testdevsu
+      username: diego
+   messages:
+      use-code-as-default-message: true
+   jpa:
+      show-sql: true
+      hibernate:
+        naming:
+          implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+   port: 8090
+springdoc:
+   swagger-ui:
+      path: /swagger-ui.html
+   packagesToScan: com.api.account.web
+   pathsToMatch: /account/**, /transaction/**
+openApi:
+   info:
+      title: account API
+      description: account API
+      version: v1.0.0   
+logging:
+   file: logs/api-account-app.log
+   pattern:
+      console: "%d %-5level %logger : %msg%n"
+      file: "%d %-5level [%thread] %logger : %msg%n"
+   level:
+      org.springframework.web: DEBUG
+      guru.springframework.controllers: DEBUG
+      org.hibernate: DEBUG
+logbook:
+   exclude:
+      - /v3/api-docs
+      - /actuator/health
+   filter:
+      form-request-mode: parameter
+cors:
+   mapping: /api/**

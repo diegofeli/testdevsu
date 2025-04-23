@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.api</groupId>
+		<artifactId>api-core-domain-parent</artifactId>
+		<version>1.0.0</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<artifactId>api-account</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>api-account</name>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>api-account-app</module>
+		<module>api-account-model</module>
+	</modules>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.4.8</version>
+		</dependency>
+	</dependencies>
+
+</project>

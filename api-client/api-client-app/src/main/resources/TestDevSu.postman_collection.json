@@ -1,0 +1,604 @@
+{
+	"info": {
+		"_postman_id": "f1c1c2a7-9ef4-4e58-bec4-9095a3f4011e",
+		"name": "Test DevSu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5369562"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "getClientByIdentity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8091/client/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1130640371"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClientByIdentities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8091/client/ids/:ids",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client",
+								"ids",
+								":ids"
+							],
+							"variable": [
+								{
+									"key": "ids",
+									"value": "1130640371,11306403712"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllClients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8091/client/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "localhost:8091/client/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1130640371211"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identity\": \"11306403712\",\r\n    \"phone\": \"3152169276\",\r\n    \"direction\": \"cocli\",\r\n    \"age\": 37,\r\n    \"name\": \"Diego\",\r\n    \"enabled\": true,\r\n    \"countryCode\": 57,\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identity\": \"11306403712\",\r\n    \"phone\": \"31521692761\",\r\n    \"direction\": \"cocli1\",\r\n    \"age\": 37,\r\n    \"name\": \"Diego1\",\r\n    \"enabled\": true,\r\n    \"countryCode\": 57,\r\n    \"password\": \"1234561\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "getAccountByNumber",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/account/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountByNumbers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/account/ids/:ids",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account",
+								"ids",
+								":ids"
+							],
+							"variable": [
+								{
+									"key": "ids",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatement",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/statement?clientIdentity=1130640371&initialDate=14/04/2025&finalDate=22/04/2025",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"statement"
+							],
+							"query": [
+								{
+									"key": "clientIdentity",
+									"value": "1130640371"
+								},
+								{
+									"key": "initialDate",
+									"value": "14/04/2025"
+								},
+								{
+									"key": "finalDate",
+									"value": "22/04/2025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/account/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/account/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1233"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"number\": \"1233\",\r\n        \"openingBalance\": 0,\r\n        \"description\": \"test\",\r\n        \"state\": \"prueba\",\r\n        \"clientId\": 1,\r\n        \"typeAccountId\": 1,\r\n        \"enabled\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/account",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"identity\": 1130640372,\r\n        \"name\": \"Diego Felipe Hernandez Mejia\",\r\n        \"phone\": \"3152169276\",\r\n        \"countryCode\": 57,\r\n        \"comments\": \"ttt1t\",\r\n        \"typeDocument\": \"CC\",\r\n        \"enabled\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/account",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "getTransactionById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/transaction/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionByAccountNumbers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/transaction/accounts/:ids",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction",
+								"accounts",
+								":ids"
+							],
+							"variable": [
+								{
+									"key": "ids",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTransactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/transaction/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "localhost:8090/transaction/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1130640372"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalAmount\": 10,\r\n    \"description\": \"test\",\r\n    \"transactionTypeId\": 2,\r\n    \"accountId\": 1,\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Transaction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 11,\r\n        \"totalAmount\": 10,\r\n        \"description\": \"test\",\r\n        \"transactionTypeId\": 1,\r\n        \"accountId\": 1,\r\n        \"enabled\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

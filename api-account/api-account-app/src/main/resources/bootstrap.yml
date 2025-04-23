@@ -1,0 +1,11 @@
+spring:
+   application:
+      name: api-account
+   profiles:
+      active: dev
+   cloud:
+      config:
+         uri: http://localhost:8888
+         name: api-account
+encrypt:
+   key: V3ct0r5f

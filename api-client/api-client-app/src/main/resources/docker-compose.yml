@@ -1,0 +1,54 @@
+version: "4"
+
+services:
+  api-client-app:
+    build:
+      context: ../../..
+      dockerfile: ../../../../Dockerfile
+    ports:
+      - 8091:8091
+    environment:
+      - spring.datasource.password=diego
+      - spring.datasource.url=jdbc:postgresql://host.docker.internal:5432/testdevsu
+      - spring.datasource.username=diego
+      - spring.redis.host=host.docker.internal
+    depends_on:
+      - db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+
+  api-account-app:
+    build:
+      context: ../../../../../api-account/api-account-app
+      dockerfile: ../../../../../api-account/Dockerfile
+    ports:
+      - 8090:8090
+    environment:
+      - spring.datasource.password=diego
+      - spring.datasource.url=jdbc:postgresql://host.docker.internal:5432/testdevsu
+      - spring.datasource.username=diego
+      - spring.redis.host=host.docker.internal
+    depends_on:
+      - db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=diego
+      - POSTGRES_PASSWORD=diego
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+volumes:
+  cache:
+    driver: local
+  db:
+    driver: local
